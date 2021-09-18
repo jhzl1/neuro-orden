@@ -1,15 +1,17 @@
-import React from 'react';
-import '../../App.css';
-import Cards from '../Cards.jsx';
-import HeroSection from '../HeroSection.jsx';
-import Footer from '../Footer.jsx';
+import React from "react";
+import "../../App.css";
+import HeroSection from "../HeroSection.jsx";
+import Description from "../Description";
+import Courses from "../Courses";
+import Gallery from "../Gallery";
 
 function Home() {
   return (
     <>
       <HeroSection />
-      <Cards />
-      <Footer />
+      <Description />
+      <Courses />
+      <Gallery />
     </>
   );
 }

@@ -1,0 +1,19 @@
+#description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 100px;
+}
+
+#description h2 {
+  font-size: 3rem;
+  font-family: playlist;
+  margin-bottom: 1rem;
+  color: #6f6f6f;
+}
+
+#description p {
+  text-align: justify;
+  margin: 1%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

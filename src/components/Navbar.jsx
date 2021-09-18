@@ -1,6 +1,7 @@
-import React, { useState} from 'react';
-import { Link } from 'react-router-dom';
-import navLogo from "./assets/img/neuro.png"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import navLogo from "./assets/img/neuro.png";
+import { itemsMenu } from "./config/itemsMenu";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -8,53 +9,46 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-
   return (
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-         <img src={navLogo} alt="Neuro Orden"  className="nav-logo"/> 
-            </Link>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-               Neuro Orden
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/services'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-               Talleres
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/products'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Pddd
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
-          </ul>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <img src={navLogo} alt="Neuro Orden" className="nav-logo" />
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+          <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
-      </nav>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
+          {itemsMenu.map((item) => (
+            <li className="nav-item" key={item.key}>
+              <Link
+                to={item.path}
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+          <a
+            href="https://instagram.com/neuroorden"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-links"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/neuro.orden"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-links"
+          >
+            <i class="fab fa-facebook-square"></i>
+          </a>
+        </ul>
+      </div>
+    </nav>
   );
 }
 
