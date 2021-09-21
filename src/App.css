@@ -1,96 +1,64 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "PT Sans", sans-serif;
-  font-size: 1rem;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-p,
-span {
-  font-size: 1rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.home {
-  display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
-
-.services,
-.products,
-.sign-up,
-.for-young,
-.for-kids,
-.for-jobs {
-  display: flex;
-  height: 50vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
-
-.training-basic {
-  background-image: url("/src/components/assets/img/kitchen.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-
-.for-jobs {
-  background-image: url("/images/jobs.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-.for-young {
-  background-image: url("/images/young.jpg");
-  background-position-y: -150px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-
-.for-kids {
-  background-image: url("/images/kids.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-
-.hero-title {
-  font-size: 100px;
+@font-face {
   font-family: playlist;
-  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+  src: url(components/assets/fonts/Playlist\ Script.otf);
 }
 
-.products {
-  background: url("/images/kitchen.jpg") repeat;
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+.prueba {
+  border: 1px solid blue;
 }
 
-.sign-up {
-  background-image: url("/images/img-8.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+.custom-font {
+  font-family: playlist;
+}
+
+#badge {
+  height: 88vh;
+}
+
+.color-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-t from-indigo-900 to-blue-700;
+}
+
+.p-style {
+  @apply text-justify leading-relaxed mb-4;
+}
+
+.transitions {
+  @apply transition ease-in duration-100;
+}
+
+.link-navbar {
+  @apply font-bold text-gray-700 border-b-2 p-2;
+}
+
+.link-navbar:hover {
+  @apply text-blue-800 border-indigo-700;
+}
+
+.custom-padding {
+  @apply py-20 px-10 md:px-40;
+}
+
+.h2 {
+  @apply color-text font-bold text-center text-5xl mb-10;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-t from-indigo-900 to-blue-700 text-white hover:bg-white;
+}
+
+.btn-secondary {
+  @apply border-2 border-pink-500 text-pink-500 bg-white hover:bg-pink-500 hover:text-white;
+}
+
+.item-icon-course {
+  @apply bg-gray-100 text-gray-700 p-12 rounded-full mb-4;
+}
+
+.card-gradient {
+  @apply px-16 py-10 bg-gradient-to-r from-blue-900 to-pink-600 shadow-lg rounded-3xl text-white w-1/2 flex flex-col justify-center items-center;
 }

@@ -1,23 +1,31 @@
-import React from "react";
-import { itemsCourses } from "./config/itemsCourses";
-import { Button } from "./Button";
+import { Link } from "react-router-dom";
+
+import { itemsCourses } from "../config/itemsCourses";
+import CustomButton from "./ui/CustomButton";
 
 const Courses = () => {
   return (
-    <div id="courses">
-      <div className="container-courses">
-        {itemsCourses.map((item, index) => (
-          <div className="item-courses" key={index}>
-            <div className="container-icon">
-              <i className={item.icon} />
-            </div>
-            <h2> {item.title}</h2>
+    <div className="custom-padding bg-gray-200">
+      <h2 className="text-center custom-font h2">Cursos</h2>
 
-            <div className="button-container">
-              <Button path={item.path} buttonStyle="btn--outline">
-                Ver Más
-              </Button>
+      <div className="flex justify-center items-center">
+        {itemsCourses.map(({ title, path, icon }) => (
+          <div
+            className="flex flex-col justify-center items-center w-80"
+            key={title}
+          >
+            <div className="item-icon-course mb-10">
+              <i className={`${icon} text-3xl`} />
             </div>
+            <div className="w-16 h-px bg-pink-500 rounded  mb-4 "></div>
+
+            <h2 className="font-bold text-center text-lg mb-6 text-gray-700">
+              Neuro Orden {title}
+            </h2>
+
+            <Link to={path}>
+              <CustomButton title="Ver Más" type="link" />
+            </Link>
           </div>
         ))}
       </div>

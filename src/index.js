@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import NeuroOrdenApp from "./NeuroOrdenApp";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<NeuroOrdenApp />, document.getElementById("root"));
